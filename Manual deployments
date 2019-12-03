@@ -1,0 +1,20 @@
+Triggering a manual deployment in GitHub Actions using Postman
+
+POST
+https://api.github.com/repos/Informasjonsforvaltning/[repo]/deployments
+
+Authorization:
+Type: OAuth 2.0
+Access Token: <personal access token>
+
+Headers:
+Accept: application/vnd.github.ant-man-preview+json
+Content-Type: application/json
+
+Body:
+(raw JSON)
+{
+"ref": "master",
+"required_contexts": [],
+"environment": "<namespace>"
+}
